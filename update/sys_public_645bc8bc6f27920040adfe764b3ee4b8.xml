@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_public">
+    <sys_public action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <page>x_8380_slack_create_enhancement</page>
+        <sys_class_name>sys_public</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-05-19 22:05:05</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>645bc8bc6f27920040adfe764b3ee4b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_8380_slack_create_enhancement</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>sys_public_645bc8bc6f27920040adfe764b3ee4b8</sys_update_name>
+        <sys_updated_by>nabil.enayet</sys_updated_by>
+        <sys_updated_on>2016-05-19 22:05:05</sys_updated_on>
+    </sys_public>
+</record_update>
