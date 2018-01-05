@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml,application/x-www-form-urlencoded</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>command</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	
+	var data_in = request.queryParams;
+
+	var JSON = new global.JSON();
+	var taskOpsHelper = new x_8380_slack.TaskOps();
+	
+	var return_code = 201;
+    var returnData;
+	
+	if (data_in.token!='CIUD0Q9p2SGWoZlUyrg9E8JX'&&data_in.token!='zg5IfaZABxfdrdnyiSIQESYj') {
+		return_code = 401;
+		returnData.text = "Unauthorized"+data_in.token;
+	} else {
+		returnData = taskOpsHelper.parseRequest(data_in);
+		gs.info(JSON.encode(returnData));
+	}
+	
+	response.setContentType('application/json');
+	response.getStreamWriter().writeString(JSON.encode(returnData));
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_8380_slack/taskops/command</operation_uri>
+        <produces>application/json,application/xml,text/xml,application/x-www-form-urlencoded</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/command</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>false</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-05-29 17:48:24</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>25603a736fe7560040adfe764b3ee480</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>command</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>sys_ws_operation_25603a736fe7560040adfe764b3ee480</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2016-11-05 18:12:19</sys_updated_on>
+        <web_service_definition display_value="TaskOps">7bfe2eff6fa7560040adfe764b3ee48a</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

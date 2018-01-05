@@ -51,7 +51,7 @@
         <sys_class_name>sys_metadata_link</sys_class_name>
         <sys_created_by>nabil.enayet</sys_created_by>
         <sys_created_on>2016-05-20 03:32:24</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>3b3615f86f67920040adfe764b3ee46b</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>KB0010001</sys_name>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_8380_slack_commands">
+    <x_8380_slack_commands action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <command>getTasks</command>
+        <description>Returns list of open tasks for project</description>
+        <example>/taskops getTasks [project_id]</example>
+        <hint_color>#A5C0CC</hint_color>
+        <name>getTasks</name>
+        <script><![CDATA[/*
+ * @return - message_object
+ *           Set the 'message_object' formatted to Slack messaging standards
+ *           Slack docs found here: https://api.slack.com/slash-commands#responding_to_a_command
+*/
+
+message_object.response_type = "in_channel";
+message_object.text = "Here are the open tasks that I found";
+message_object.attachments = [];
+
+if (command_parm.split(' ')[0].length > 0) {
+	var gr_tasks = new GlideRecord('x_8380_slack_project_task');
+	gr_tasks.addQuery('active',true);
+	gr_tasks.addQuery('project.number',command_parm.split(' ')[0]);
+	gr_tasks.query();
+
+	while (gr_tasks.next()) {
+		var attachment_object = {};
+		attachment_object.title = gr_tasks.number.toString() + ": " + gr_tasks.short_description.toString();
+		attachment_object.text = gr_tasks.description.toString();
+		attachment_object.mrkdwn_in = ["text", "title"];
+		message_object.attachments.push(attachment_object);
+	}
+
+	if (message_object.attachments.length<1) {
+		message_object.text = "_No open tasks found for *" + command_parm.split(' ')[0] + "* found at this time_";
+	}
+} else {
+	message_object.text = "I'm afraid I require a little more information to retrieve a list of tasks. Try again using `/taskops getTasks [project_id]`";
+}
+]]></script>
+        <sys_class_name>x_8380_slack_commands</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-05-31 05:25:58</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>a2b95a146f73960040adfe764b3ee446</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>getTasks</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>x_8380_slack_commands_a2b95a146f73960040adfe764b3ee446</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2016-08-29 18:03:33</sys_updated_on>
+    </x_8380_slack_commands>
+</record_update>

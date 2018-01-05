@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>This page is designed to allow administrators to easily add the Slack application to one or multiple teams of their choice</description>
+        <direct>true</direct>
+        <endpoint>x_8380_slack_setup.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+	
+	
+	<!--a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands,bot&amp;client_id=13990487521.50124153969&amp;redirect_uri=https://dev16788.service-now.com">
+		<img alt="Add to Slack" 
+			 height="40"
+			 width="139" 
+			 src="https://platform.slack-edge.com/img/add_to_slack.png" 
+			 srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
+	</a-->
+	<g:requires name="x_8380_slack.angular.min.js"/>
+	<h3>Set up Slash Command</h3>
+	
+
+</j:jelly>]]></html>
+        <name>setup</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-06-11 18:10:21</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>0351f5c86f4c6a0040adfe764b3ee419</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>setup</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>sys_ui_page_0351f5c86f4c6a0040adfe764b3ee419</sys_update_name>
+        <sys_updated_by>nabil.enayet</sys_updated_by>
+        <sys_updated_on>2016-06-11 19:15:19</sys_updated_on>
+    </sys_ui_page>
+</record_update>

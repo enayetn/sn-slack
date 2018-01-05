@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_8380_slack.TaskOps</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>TaskOps</name>
+        <script><![CDATA[var TaskOps = Class.create();
+TaskOps.prototype = {
+    initialize: function() {
+    },
+	
+	parseRequest : function(data) {
+		/**
+			* Description: Read command and process as required
+			* Parameters: Slack input text
+			* Returns: Slack-formatted return object
+		*/
+		
+		var text = data.text;
+		
+		var thisCommand = text.toString().split(' ')[0];
+		
+		var gr_commands = new GlideRecord('x_8380_slack_commands');
+		gr_commands.addQuery('active',true);
+		gr_commands.addQuery('command',thisCommand);
+		gr_commands.query();
+		
+		while ( gr_commands.next() ) {
+			var evaluator = new GlideScopedEvaluator(); 
+			evaluator.putVariable('message_object',{});
+			evaluator.putVariable('slackdata',data);
+			if (text.toString().split(' ').length>1) {
+				evaluator.putVariable('command_parm',text.toString().substr(text.toString().indexOf(" ") + 1));
+			} else {
+				evaluator.putVariable('command_parm','');
+			}
+			evaluator.evaluateScript(gr_commands,'script',null);
+			return evaluator.getVariable('message_object');
+		}
+
+		return {
+			"text" : "Sorry, I don't have that command in my programming. Try `/pyf help` for more available commands"
+		};
+		
+		/*switch(thisCommand) {
+			case 'help':
+				return this._api_help();
+			case 'getProjects':
+				return '';
+			default:
+				return {
+					"response_type" : "in_channel",
+					"text" : "Sorry, I don't have that command in my programming. Try `/taskops help` for more available commands"
+				};
+		}*/
+		
+	},
+	
+	_api_help : function () {
+		var return_object = {};
+		return_object.response_type = "in_channel";
+		return_object.text = "Use any of the following commands to control the _Anylytics TaskOps Bot_";
+		return_object.attachments = this._getAvailableCommands();
+		return return_object;
+	},
+	
+	_getAvailableCommands : function() {
+		/**
+			* Description: Document available commands in TaskOps-Slack Integration
+			* Parameters: None
+			* Returns: Array of Slack-formatted attachment objects
+		*/
+		var commands = [
+			{
+				"name":"help",
+				"description":"Returns list of bot commands",
+				"example":"/taskops help",
+				"color":"#000"
+			},
+			{
+				"name":"getProjects",
+				"description":"Returns list of open project IDs",
+				"example":"/taskops getProjects",
+				"color":"#1A91BD"
+			},
+			{
+				"name":"createProject",
+				"description":"Create a new project, returns project ID",
+				"example":"/taskops createProject [title]",
+				"color":"#1A91BD"
+			},
+			{
+				"name":"getTasks",
+				"description":"Returns list of open tasks for project",
+				"example":"/taskops getTasks [project_id]",
+				"color":"#A5C0CC"
+			},
+			{
+				"name":"createTask",
+				"description":"Create a new task for project, returns task ID",
+				"example":"/taskops createTask [title]",
+				"color":"#A5C0CC"
+			},
+			{
+				"name":"addTaskNotes",
+				"description":"Add notes for a task",
+				"example":"/taskops addTaskNotes [task_id] [notes]",
+				"color":"#A5C0CC"
+			},
+			{
+				"name":"getTaskNotes",
+				"description":"Returns list of notes on a task",
+				"example":"/taskops getTaskNotes [task_id]",
+				"color":"#A5C0CC"
+			},
+			{
+				"name":"completeTask",
+				"description":"Mark task as complete",
+				"example":"/taskops completeTask [task_id]",
+				"color":"#51A050"
+			}
+		];
+		
+		var return_data = [];
+		
+		for (var items in commands) {
+			var tmpObj = {};
+			//tmpObj.pretext = "`"+commands[items].name+"`";
+			tmpObj.title = commands[items].name;
+			tmpObj.text = commands[items].description + "\n *Example:* `"+commands[items].example+"`";
+			tmpObj.color = commands[items].color;
+			tmpObj.mrkdwn_in = ["text", "title"];
+			return_data.push(tmpObj);
+		}
+		return return_data;
+	},
+
+    type: 'TaskOps'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-05-29 19:24:56</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>212732376fe7560040adfe764b3ee444</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>TaskOps</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>sys_script_include_212732376fe7560040adfe764b3ee444</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2016-11-05 18:12:54</sys_updated_on>
+    </sys_script_include>
+</record_update>

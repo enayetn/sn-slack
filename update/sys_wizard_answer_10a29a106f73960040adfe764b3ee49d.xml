@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <answer>Commands</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>Commands</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Application File" name="Application File">b8c84cd36f52120040adfe764b3ee4e9</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-05-31 04:54:57</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>10a29a106f73960040adfe764b3ee49d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Commands</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>sys_wizard_answer_10a29a106f73960040adfe764b3ee49d</sys_update_name>
+        <sys_updated_by>nabil.enayet</sys_updated_by>
+        <sys_updated_on>2016-05-31 04:54:57</sys_updated_on>
+        <table/>
+        <target_url>x_8380_slack_commands.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+</record_update>

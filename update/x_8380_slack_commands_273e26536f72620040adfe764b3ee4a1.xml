@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_8380_slack_commands">
+    <x_8380_slack_commands action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <command>spoiler</command>
+        <description>Hides your spoiler message</description>
+        <example>/pyf spoiler [Spoiler here]</example>
+        <hint_color>#0099ff</hint_color>
+        <name>Spoilers!</name>
+        <script><![CDATA[/*
+ * @return - message_object
+ *           Set the 'message_object' formatted to Slack messaging standards
+ *           Slack docs found here: https://api.slack.com/slash-commands#responding_to_a_command
+*/
+
+var jsn = new global.JSON();
+var request = new sn_ws.RESTMessageV2();
+	request.setHttpMethod('post');
+	request.setEndpoint(slackdata.response_url);
+	request.setRequestHeader("content-type","application/json");
+
+//message_object.response_type = "in_channel";
+message_object.text = "Got it, posting masked spoiler message...";//Spoiler Alert from " + slackdata.user_name;//+jsn.encode(slackdata);
+
+var delayed_message = {};
+
+delayed_message.text = "Spoilers!";
+delayed_message.attachments = [
+	{
+		"color": 'danger',
+		//"text":"Spoiler Alert:\n\n\n\n\n\n\n\n\n\n"+command_parm.toString(),
+		"text": slackdata.user_name + ' posted a spoiler...\n\n\n\n\n' + command_parm.toString()
+	}
+];
+delayed_message.unfurl_media = false;
+delayed_message.response_type = "in_channel";
+
+request.setRequestBody(jsn.encode(delayed_message));
+request.executeAsync();]]></script>
+        <sys_class_name>x_8380_slack_commands</sys_class_name>
+        <sys_created_by>enayetn</sys_created_by>
+        <sys_created_on>2016-11-05 17:45:44</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>273e26536f72620040adfe764b3ee4a1</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>Spoilers!</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>x_8380_slack_commands_273e26536f72620040adfe764b3ee4a1</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2016-11-07 02:09:06</sys_updated_on>
+    </x_8380_slack_commands>
+</record_update>

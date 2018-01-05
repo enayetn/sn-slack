@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_8380_slack_commands">
+    <x_8380_slack_commands action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <command>—</command>
+        <description>Strike down your fellow PYF'er!</description>
+        <example>/pyf -- @user</example>
+        <hint_color>#0099ff</hint_color>
+        <name>Take Points</name>
+        <script><![CDATA[/*
+ * @return - message_object
+ *           Set the 'message_object' formatted to Slack messaging standards
+ *           Slack docs found here: https://api.slack.com/slash-commands#responding_to_a_command
+*/
+
+var isValid = true;
+
+message_object.text = "";
+
+var recip = command_parm.split(" ")[0];
+
+if (recip[0]!="@") {
+	message_object.text = "You can only -- @users. Please make sure you include @ in front of the username";
+	isValid = false;
+}
+
+if (recip == "@"+slackdata.user_name && isValid) {
+	message_object.response_type = "in_channel";
+	message_object.text = "¯\\_(ツ)_/¯ ";
+}
+
+if ((slackdata.channel_name[0]=="directmessage"||slackdata.channel_name[0]=="privategroup") && isValid) {
+	message_object.response_type = "in_channel";
+	message_object.text = "https://media.giphy.com/media/3o85xyklT2t8VVjxxC/giphy.gif";
+	isValid = false;
+}
+
+if (isValid) {
+	var hasUpdated = false;
+	var gr = new GlideRecord('x_8380_slack_points_tracker');
+	gr.addQuery('thing', recip);
+	gr.query();
+	if (gr.hasNext()) {
+		gr.next();
+		var now = (new GlideDateTime()).getNumericValue();
+		var lastUpdated = gr.getValue('sys_updated_on');
+		var updated = new GlideDateTime(lastUpdated);
+		var updatedNumeric = updated.getNumericValue();
+		if ((now-updatedNumeric)<15000) {
+			hasUpdated=true;
+		} else {
+			gr.setValue('points', parseInt(gr.getValue('points'))-1);
+			gr.update();
+		}
+		
+	} else {
+		gr.initialize();
+		gr.setValue('thing',recip);
+		gr.setValue('points',-1);
+		gr.insert();
+	}
+
+	if (!hasUpdated) {
+		message_object.response_type = "in_channel";
+		message_object.text += "Ouch!! " + recip + " now at " + gr.getValue('points') + " points!";
+	} else {
+		message_object.response_type = "in_channel";
+		message_object.text += "Slow down there cowboy. https://media.giphy.com/media/rhtEdqWwkAHfi/source.gif";
+	}
+}
+
+]]></script>
+        <sys_class_name>x_8380_slack_commands</sys_class_name>
+        <sys_created_by>enayetn</sys_created_by>
+        <sys_created_on>2017-02-21 01:41:27</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>5f3dd77d6f89360040adfe764b3ee4a1</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Take Points</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>x_8380_slack_commands_5f3dd77d6f89360040adfe764b3ee4a1</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2017-02-28 04:47:10</sys_updated_on>
+    </x_8380_slack_commands>
+</record_update>

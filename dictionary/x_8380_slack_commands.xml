@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="update_synch=true" extends="sys_metadata" label="Commands" max_length="40" name="x_8380_slack_commands" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Command" max_length="20" name="command" type="string"/>
+        <element label="Description" max_length="100" name="description" type="string"/>
+        <element label="Example" max_length="40" name="example" type="string"/>
+        <element label="Hint Color" max_length="20" name="hint_color" type="string"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element default="/*&#13;&#10; * @return - message_object&#13;&#10; *           Set the 'message_object' formatted to Slack messaging standards&#13;&#10; *           Slack docs found here: https://api.slack.com/slash-commands#responding_to_a_command&#13;&#10;*/&#13;&#10;return_object.response_type = &quot;in_channel&quot;;&#13;&#10;return_object.text = &quot;&quot;;" label="Script" max_length="10000" name="script" type="script"/>
+    </element>
+</database>

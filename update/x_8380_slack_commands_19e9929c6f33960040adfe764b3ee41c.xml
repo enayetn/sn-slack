@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_8380_slack_commands">
+    <x_8380_slack_commands action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <command>createTask</command>
+        <description>Create a new task for project, returns task ID</description>
+        <example>/taskops createTask [project_id] [title]</example>
+        <hint_color>#A5C0CC</hint_color>
+        <name>createTask</name>
+        <script><![CDATA[/*
+ * @return - message_object
+ *           Set the 'message_object' formatted to Slack messaging standards
+ *           Slack docs found here: https://api.slack.com/slash-commands#responding_to_a_command
+*/
+
+message_object.response_type = "in_channel";
+
+
+if (command_parm.split(' ').length>1) {
+	var gr_ptask = new GlideRecord('x_8380_slack_project_task');
+	gr_ptask.initialize();
+	gs.info(command_parm);
+	gr_ptask.short_description = command_parm.toString().substr(command_parm.toString().indexOf(" ") + 1);
+	gr_ptask.project.setDisplayValue(command_parm.split(' ')[0]);
+	var ptask_num = gr_ptask.insert();
+	gr_ptask.initialize();
+	gr_ptask.get(ptask_num);
+	message_object.text = "I have created " + gr_ptask.number.toString() + ".";
+} 
+
+if (command_parm.split(' ').length==1) {
+	message_object.text = "I'm afraid I require a little more information to create a task. Try again using `/taskops createTask [project_id] [title]`";
+}
+
+
+
+]]></script>
+        <sys_class_name>x_8380_slack_commands</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-05-31 05:26:42</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>19e9929c6f33960040adfe764b3ee41c</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>createTask</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>x_8380_slack_commands_19e9929c6f33960040adfe764b3ee41c</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2016-08-29 18:03:34</sys_updated_on>
+    </x_8380_slack_commands>
+</record_update>

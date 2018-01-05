@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_8380_slack_commands">
+    <x_8380_slack_commands action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <command>wtf</command>
+        <description>All your wtf feelings summed in one image</description>
+        <example>/pyf wtf</example>
+        <hint_color>#0099ff</hint_color>
+        <name>What Did I Just Read?</name>
+        <script><![CDATA[/*
+ * @return - message_object
+ *           Set the 'message_object' formatted to Slack messaging standards
+ *           Slack docs found here: https://api.slack.com/slash-commands#responding_to_a_command
+*/
+
+message_object.text = "https://i.imgur.com/TAR5HGd.jpg";
+message_object.response_type = "in_channel";
+message_object.unfurl_media = true;]]></script>
+        <sys_class_name>x_8380_slack_commands</sys_class_name>
+        <sys_created_by>enayetn</sys_created_by>
+        <sys_created_on>2016-10-01 02:52:51</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>f232537f6f0e220040adfe764b3ee426</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>What Did I Just Read?</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>x_8380_slack_commands_f232537f6f0e220040adfe764b3ee426</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2016-10-01 02:52:51</sys_updated_on>
+    </x_8380_slack_commands>
+</record_update>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="script" label="Script" language="en" table="x_8380_slack_commands">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>script</element>
+            <help/>
+            <hint/>
+            <label>Script</label>
+            <language>en</language>
+            <name>x_8380_slack_commands</name>
+            <plural>Scripts</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-05-30 22:16:19</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>8567b8986fff560040adfe764b3ee4fc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Script</sys_name>
+            <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+            <sys_update_name>sys_documentation_x_8380_slack_commands_script_en</sys_update_name>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-05-30 22:16:19</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

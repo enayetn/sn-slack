@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_8380_slack_commands">
+    <x_8380_slack_commands action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <command>help</command>
+        <description>Returns list of available commands</description>
+        <example>/pyf help</example>
+        <hint_color>#000</hint_color>
+        <name>help</name>
+        <script><![CDATA[/*
+ * @return - message_object
+ *           Set the 'message_object' formatted to Slack messaging standards
+ *           Slack docs found here: https://api.slack.com/slash-commands#responding_to_a_command
+*/
+
+message_object.text = "Use any of the following commands to control the _PuntYouFools Helper Bot_";
+message_object.attachments = [];
+
+var gr_commands = new GlideRecord('x_8380_slack_commands');
+gr_commands.addQuery('active',true);
+gr_commands.query();
+
+while (gr_commands.next()) {
+	var attachment_object = {};
+	attachment_object.title = gr_commands.name.toString();
+	attachment_object.text = gr_commands.description + "\n *Example:* `"+gr_commands.example+"`";
+	attachment_object.color = gr_commands.hint_color.toString();
+	attachment_object.mrkdwn_in = ["text", "title"];
+	message_object.attachments.push(attachment_object);
+}]]></script>
+        <sys_class_name>x_8380_slack_commands</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-05-31 04:48:41</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>b3dc29586f33960040adfe764b3ee432</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>help</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>x_8380_slack_commands_b3dc29586f33960040adfe764b3ee432</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2016-08-29 18:10:18</sys_updated_on>
+    </x_8380_slack_commands>
+</record_update>

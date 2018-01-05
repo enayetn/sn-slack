@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="Project Task" max_length="40" name="x_8380_slack_project_task" sizeclass="7" type="collection">
+        <element label="Project" max_length="32" name="project" reference="x_8380_slack_project" type="reference"/>
+    </element>
+</database>

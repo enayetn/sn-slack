@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_8380_slack_commands">
+    <x_8380_slack_commands action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <command>createProject</command>
+        <description>Create a new project, returns project ID</description>
+        <example>/taskops createProject [title]</example>
+        <hint_color>#1A91BD</hint_color>
+        <name>createProject</name>
+        <script><![CDATA[/*
+ * @return - message_object
+ *           Set the 'message_object' formatted to Slack messaging standards
+ *           Slack docs found here: https://api.slack.com/slash-commands#responding_to_a_command
+*/
+
+message_object.response_type = "in_channel";
+
+
+if (command_parm.length>1) {
+	var gr_project = new GlideRecord('x_8380_slack_project');
+	gr_project.initialize();
+	gr_project.short_description = command_parm.toString().substr(command_parm.toString().indexOf(" ") + 1);
+	var project_num = gr_project.insert();
+	gr_project.initialize();
+	gr_project.get(project_num);
+	message_object.text = "I have created " + gr_project.number.toString() + ".";
+} else {
+	message_object.text = "I'm afraid I require a little more information to create a project. Please try again using `taskops createProject [title]`";
+}]]></script>
+        <sys_class_name>x_8380_slack_commands</sys_class_name>
+        <sys_created_by>nabil.enayet</sys_created_by>
+        <sys_created_on>2016-05-31 05:24:55</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>df7912146f73960040adfe764b3ee46a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>createProject</sys_name>
+        <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+        <sys_update_name>x_8380_slack_commands_df7912146f73960040adfe764b3ee46a</sys_update_name>
+        <sys_updated_by>enayetn</sys_updated_by>
+        <sys_updated_on>2016-08-29 18:03:34</sys_updated_on>
+    </x_8380_slack_commands>
+</record_update>

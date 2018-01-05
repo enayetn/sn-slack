@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="" section_id="17bd10556f73d60040adfe764b3ee4fd" sys_domain="global" table="sys_script" version="3" view="slackops">
+        <sys_ui_annotation action="INSERT_OR_UPDATE">
+            <is_plain_text>false</is_plain_text>
+            <sys_created_by>farhana.chowdhury</sys_created_by>
+            <sys_created_on>2015-07-21 23:11:31</sys_created_on>
+            <sys_id>0cd0481fcb510200a0461a7a734c9cb8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>farhana.chowdhury</sys_updated_by>
+            <sys_updated_on>2015-07-21 23:11:31</sys_updated_on>
+            <text>Business Rule Form Top</text>
+            <type display_value="Section Details">19756e5ec3313000bac1addbdfba8f18</type>
+        </sys_ui_annotation>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>0cd0481fcb510200a0461a7a734c9cb8</element>
+            <position>0</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>1bbd10556f73d60040adfe764b3ee4fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type>annotation</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>1</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>9bbd10556f73d60040adfe764b3ee4fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>2</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>1fbd10556f73d60040adfe764b3ee4fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>collection</element>
+            <position>3</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>9fbd10556f73d60040adfe764b3ee4fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>priority</element>
+            <position>4</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>13bd10556f73d60040adfe764b3ee4fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>5</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>93bd10556f73d60040adfe764b3ee4fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_scope</element>
+            <position>6</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>17bd10556f73d60040adfe764b3ee4fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>access</element>
+            <position>7</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>97bd10556f73d60040adfe764b3ee4fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>8</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>1bbd10556f73d60040adfe764b3ee4fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>advanced</element>
+            <position>9</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>9bbd10556f73d60040adfe764b3ee4fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>is_rest</element>
+            <position>10</position>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_id>1fbd10556f73d60040adfe764b3ee4fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_script" sys_domain="global" view="5bbd10556f73d60040adfe764b3ee4fc">17bd10556f73d60040adfe764b3ee4fd</sys_ui_section>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>sys_script</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>nabil.enayet</sys_created_by>
+            <sys_created_on>2016-06-02 22:58:10</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>17bd10556f73d60040adfe764b3ee4fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sys_script</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Slack" source="x_8380_slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Slack">7c7390dd6f7e520040adfe764b3ee4f1</sys_scope>
+            <sys_update_name>sys_ui_section_17bd10556f73d60040adfe764b3ee4fd</sys_update_name>
+            <sys_updated_by>nabil.enayet</sys_updated_by>
+            <sys_updated_on>2016-06-02 22:58:10</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="SlackOps Notification" name="slackops">5bbd10556f73d60040adfe764b3ee4fc</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

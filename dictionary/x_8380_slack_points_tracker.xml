@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Points Tracker" max_length="40" name="x_8380_slack_points_tracker" type="collection">
+        <element label="Points" max_length="40" name="points" type="integer"/>
+        <element label="Thing" max_length="100" name="thing" type="string"/>
+    </element>
+</database>
